@@ -62,32 +62,10 @@ function handleKeys() {
 
 function displayBulletBillCannon() {
   imageMode(CENTER)
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY - 350, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
+  for (let i = 0; i < 350; i + 50)
+  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY - i, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
 
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY - 300, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
-
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY - 250, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
-
-
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY - 200, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
-
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY - 150, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
-
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY - 100, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
-
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY - 50, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
-
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
-
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY + 50, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
-
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY + 100, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
-
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY + 150, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
-
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY + 200, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
-
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY + 250, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
+  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY + i, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
 }
 
 
