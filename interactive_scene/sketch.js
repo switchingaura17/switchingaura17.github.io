@@ -62,40 +62,23 @@ function handleKeys() {
 
 function displayBulletBillCannon() {
   imageMode(CENTER)
-  for (let i = 0; i < 350; i + 50)
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY - i, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
+  for (let i = 0; i < 350; i += 50) {
+    image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY - i, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
+    
+    image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY + i, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
+  }
 
-  image(bulletBillCannon, bulletBillCannonX, bulletBillCannonY + i, bulletBillCannon.width * bulletBillCannonScaler, bulletBillCannon.height * bulletBillCannonScaler)
 }
 
 
 function displayBulletBill() {
   imageMode(CENTER)
-  image(bulletBill, bulletBillX, bulletBillY - 350, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
+  for (let j = 0; j < 350; j += 50) {
+    image(bulletBill, bulletBillX, bulletBillY - j, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
 
-  image(bulletBill, bulletBillX, bulletBillY - 300, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
+    image(bulletBill, bulletBillX, bulletBillY + j, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
+  } 
 
-  image(bulletBill, bulletBillX, bulletBillY - 250, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
-
-  image(bulletBill, bulletBillX, bulletBillY - 200, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
-
-  image(bulletBill, bulletBillX, bulletBillY - 150, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
-
-  image(bulletBill, bulletBillX, bulletBillY - 100, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
-
-  image(bulletBill, bulletBillX, bulletBillY - 50, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
-
-  image(bulletBill, bulletBillX, bulletBillY, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
-
-  image(bulletBill, bulletBillX, bulletBillY + 50, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
-
-  image(bulletBill, bulletBillX, bulletBillY + 100, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
-
-  image(bulletBill, bulletBillX, bulletBillY + 150, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
-
-  image(bulletBill, bulletBillX, bulletBillY + 200, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
-
-  image(bulletBill, bulletBillX, bulletBillY + 250, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler)
 }
 
 function displayMario() {
@@ -121,7 +104,10 @@ function hitMario() {
 }
 
 function isMarioHit() {
-  hit = collideRectRect( bulletBillX, bulletBillY - 350, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler, marioX - 1.51, marioY - 1.5, mario.width * marioScaler, mario.height * marioScaler);
+  for (let k = 0; k < 350; k += 50) {
+    hit = collideRectRect( bulletBillX, bulletBillY - k, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler, marioX - 1.51, marioY - 1.5, mario.width * marioScaler, mario.height * marioScaler);
 
-  hit = collideRectRect( bulletBillX, bulletBillY - 300, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler, marioX - 1.51, marioY - 1.5, mario.width * marioScaler, mario.height * marioScaler);
+    hit = collideRectRect( bulletBillX, bulletBillY + k, bulletBill.width * bulletBillScaler, bulletBill.height * bulletBillScaler, marioX - 1.51, marioY - 1.5, mario.width * marioScaler, mario.height * marioScaler);
+  }
+
 }
