@@ -1,7 +1,7 @@
 let grid;
 let cellWidth;
 let cellHeight;
-const GRIDSIZE = 4
+const GRIDSIZE = 10;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -17,7 +17,7 @@ function draw() {
 
 function keyPressed() {
   if (key === " ") {
-    grid = generateRandomGrid(10);
+    grid = generateEmptyGrid(10);
   }
 }
 
