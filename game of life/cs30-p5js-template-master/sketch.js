@@ -1,7 +1,7 @@
 let grid;
 let cellWidth;
 let cellHeight;
-const GRIDSIZE = 10;
+const GRIDSIZE = 50;
 let autoPlay = false;
 
 function setup() {
