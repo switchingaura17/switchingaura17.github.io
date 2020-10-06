@@ -2,7 +2,7 @@
 // Joshua Mason
 // 10/1/2020
 
-let grid, cellWidth, cellHeight, cellY, cellX;
+let grid, cellWidth, cellHeight, cellY, cellX, cell;
 const GRIDSIZE = 25;
 let bossBoo, minnionBoo;
 let baseMap, initialState;
@@ -23,8 +23,6 @@ function setup() {
   for (let i = 0; i < baseMap.length; i++) {
     baseMap[i] = baseMap[i].split(",");
   }
-
-  //loop through the whole 2d array, and turn everything to numbers
   for (let y=0; y<GRIDSIZE; y++) {
     for (let x=0; x<GRIDSIZE; x++) {
       baseMap[y][x] = int(baseMap[y][x]);
@@ -34,6 +32,7 @@ function setup() {
   grid = baseMap;
   cellWidth = width / grid[0].length;
   cellHeight = height / grid.length;
+  minnionBoo = new Minnion(0, height/2);
 }
 
 function draw() {
@@ -71,14 +70,17 @@ function generateEmptyGrid(gridSize) {
 }
 
 class Minnion {
-  cunstructor {
-    this . x = 0;
-    this.y = checkBlack();
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
   }
-  
-  checkBlack() {
-    for (let i =0; i < windowWidth; i += 5) {
-      
+
+  move() {
+    if (cell === 1) {
+      this.x += 5;
+    }
+    else if (cell === 0) {
+      this.y -= 5;
     }
   }
 }
