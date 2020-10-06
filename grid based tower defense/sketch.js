@@ -39,6 +39,8 @@ function draw() {
   background(220);
 
   displayBattleMap();
+  Minnion.move();
+  Minnion.display();
 }
 
 function displayBattleMap() {
@@ -82,5 +84,27 @@ class Minnion {
     else if (cell === 0) {
       this.y -= 5;
     }
+  }
+
+  display() {
+    
+  }
+}
+
+function placeTile(location, x, y) {
+  if (location === "#") {
+    spawnMinnionBoo();
+  }
+}
+
+function spawnMinnionBoo() {
+  for (let i = 0; i < checkBlack; i++) {
+    if ()
+  }
+}
+
+function checkBlack() {
+  if (minnionBoo === 1) {
+    x += 5;
   }
 }
