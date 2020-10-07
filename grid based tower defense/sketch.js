@@ -4,7 +4,8 @@
 
 let grid, cellWidth, cellHeight, cellY, cellX, cell;
 const GRIDSIZE = 25;
-let bossBoo, minnionBoo;
+let bossBoo, bossBooScaler = 0.5; 
+let minnionBoo, minnionBooScaler = 0.3;
 let baseMap, initialState;
 
 function preload() {
@@ -32,15 +33,16 @@ function setup() {
   grid = baseMap;
   cellWidth = width / grid[0].length;
   cellHeight = height / grid.length;
-  minnionBoo = new Minnion(0, height/2);
+  // minnionBoo = new Minnion(0, height/2);
 }
 
 function draw() {
   background(220);
 
   displayBattleMap();
-  Minnion.move();
-  Minnion.display();
+  displayMinnionBoo();
+  // Minnion.move();
+  // Minnion.display();
 }
 
 function displayBattleMap() {
@@ -71,40 +73,33 @@ function generateEmptyGrid(gridSize) {
   return grid;
 }
 
-class Minnion {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-  }
+function displayMinnionBoo() {
 
-  move() {
-    if (cell === 1) {
-      this.x += 5;
-    }
-    else if (cell === 0) {
-      this.y -= 5;
-    }
-  }
-
-  display() {
-    
-  }
 }
 
-function placeTile(location, x, y) {
+function placeMinnion(location, x, y) {
   if (location === "#") {
-    spawnMinnionBoo();
+    image(minnionBoo, 0, y / 2, minnionBooScaler * minnionBoo.width, minnionBooScaler * minnionBoo.width);
   }
 }
 
-function spawnMinnionBoo() {
-  for (let i = 0; i < checkBlack; i++) {
-    if ()
-  }
-}
+// DO NOT USE IT DOES NOT WORK TRUST ME, FUTURE ME 
+// class Minnion {
+//   constructor(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
 
-function checkBlack() {
-  if (minnionBoo === 1) {
-    x += 5;
-  }
-}
+//   move() {
+//     if (cell === 1) {
+//       this.x += 5;
+//     }
+//     else if (cell === 0) {
+//       this.y -= 5;
+//     }
+//   }
+
+//   display() {
+    
+//   }
+// }
