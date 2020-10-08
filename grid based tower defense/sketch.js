@@ -39,6 +39,7 @@ function setup() {
 function draw() {
   background(220);
 
+  placeMinnion();
   displayBattleMap();
   displayMinnionBoo();
   // Minnion.move();
@@ -77,9 +78,9 @@ function displayMinnionBoo() {
 
 }
 
-function placeMinnion(location, x, y) {
+function placeMinnion(location) {
   if (location === "#") {
-    image(minnionBoo, 0, y / 2, minnionBooScaler * minnionBoo.width, minnionBooScaler * minnionBoo.width);
+    image(minnionBoo, 0, height / 2, minnionBooScaler * minnionBoo.width, minnionBooScaler * minnionBoo.height);
   }
 }
 
