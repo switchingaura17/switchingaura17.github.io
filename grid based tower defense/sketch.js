@@ -39,13 +39,17 @@ function setup() {
 function draw() {
   background(220);
 
-  placeMinnion();
+  // placeMinnion();
   displayBattleMap();
   displayMinnionBoo();
   // Minnion.move();
   // Minnion.display();
 }
 
+// function placeMinnion(location) {
+//   if (location === "#") {
+//   }
+// }
 function displayBattleMap() {
   for (let y=0; y<grid.length; y++) {
     for (let x=0; x<grid[y].length; x++) {
@@ -55,11 +59,11 @@ function displayBattleMap() {
       else {
         fill("black");
       }
-
+      
       rect(cellWidth*x, cellHeight*y, cellWidth, cellHeight);
     }
   }
- 
+  
 }
 
 function generateEmptyGrid(gridSize) {
@@ -75,13 +79,12 @@ function generateEmptyGrid(gridSize) {
 }
 
 function displayMinnionBoo() {
-
+  image(minnionBoo, 0, height / 2.2, minnionBooScaler * minnionBoo.width, minnionBooScaler * minnionBoo.height);
 }
 
-function placeMinnion(location) {
-  if (location === "#") {
-    image(minnionBoo, 0, height / 2, minnionBooScaler * minnionBoo.width, minnionBooScaler * minnionBoo.height);
-  }
+
+function moveMinnionBoo() {
+  
 }
 
 // DO NOT USE IT DOES NOT WORK TRUST ME, FUTURE ME 
