@@ -5,8 +5,10 @@
 let grid, cellWidth, cellHeight, cellY, cellX, cell;
 const GRIDSIZE = 25;
 let bossBoo, bossBooScaler = 0.5; 
-let minnionBoo, minnionBooScaler = 0.3;
+let minnionBoo, minnionHealthBar, hit = 50, minnionBooScaler = 0.3;
 let baseMap, initialState;
+let moveMinnionBoo = new Map();
+let pear;
 
 function preload() {
   bossBoo = loadImage("assets/bossBoo.png");
@@ -16,6 +18,8 @@ function preload() {
   baseMap = loadStrings("assets/1.txt");
 
   initialState = loadStrings("assets/2.txt");
+
+  pear = loadImage("assets/pear.png");
 }
 
 function setup() {
@@ -42,14 +46,12 @@ function draw() {
   // placeMinnion();
   displayBattleMap();
   displayMinnionBoo();
+  ifMinnionHit();
   // Minnion.move();
   // Minnion.display();
+  moveMinnionBoo.set("minnionBoo", 2);
 }
 
-// function placeMinnion(location) {
-//   if (location === "#") {
-//   }
-// }
 function displayBattleMap() {
   for (let y=0; y<grid.length; y++) {
     for (let x=0; x<grid[y].length; x++) {
@@ -80,30 +82,17 @@ function generateEmptyGrid(gridSize) {
 
 function displayMinnionBoo() {
   image(minnionBoo, 0, height / 2.2, minnionBooScaler * minnionBoo.width, minnionBooScaler * minnionBoo.height);
-}
 
-
-function moveMinnionBoo() {
+  fill("red");
+  minnionHealthBar = rect(30, height / 2.15, hit, 10);
   
+
 }
 
-// DO NOT USE IT DOES NOT WORK TRUST ME, FUTURE ME 
-// class Minnion {
-//   constructor(x, y) {
-//     this.x = x;
-//     this.y = y;
-//   }
-
-//   move() {
-//     if (cell === 1) {
-//       this.x += 5;
-//     }
-//     else if (cell === 0) {
-//       this.y -= 5;
-//     }
-//   }
-
-//   display() {
-    
-//   }
-// }
+function ifMinnionHit() {
+  if (pear.radius <= minnionBoo.radius + pear.radius) {
+    for (let hit = 50; hit > 0; hit -= 10) {
+      return "hit";
+    }
+  }
+}
