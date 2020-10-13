@@ -8,7 +8,8 @@ let bossBoo, bossBooScaler = 0.5;
 let minnionBoo, minnionHealthBar, hit = 50, minnionBooScaler = 0.3;
 let baseMap, initialState;
 // let moveMinnionBoo = new Map();
-let pear, roundNumber;
+let pear;
+let round50 = false;
 
 function preload() {
   bossBoo = loadImage("assets/bossBoo.png");
@@ -105,13 +106,14 @@ class Minnion {
     this.speed = 5;
   }
 
-  resetAfter50() {
-    for (roundNumber = 0; roundNumber < 50; roundNumber += 2) {
-      if (roundNumber === 50) {
-        console.log(roundNumber);
-      }
-    }
-  }
+  // use as a boolean and reset using a function outside of class
+  // resetAfter50() {
+  //   for (roundNumber = 0; roundNumber < 50; roundNumber += 2) {
+  //     if (roundNumber === 50) {
+  //       console.log(roundNumber);
+  //     }
+  //   }
+  // }
 
   movingMinnion() {
     let 
