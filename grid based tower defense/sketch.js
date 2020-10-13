@@ -7,8 +7,8 @@ const GRIDSIZE = 25;
 let bossBoo, bossBooScaler = 0.5; 
 let minnionBoo, minnionHealthBar, hit = 50, minnionBooScaler = 0.3;
 let baseMap, initialState;
-let moveMinnionBoo = new Map();
-let pear;
+// let moveMinnionBoo = new Map();
+let pear, roundNumber;
 
 function preload() {
   bossBoo = loadImage("assets/bossBoo.png");
@@ -45,11 +45,24 @@ function draw() {
 
   // placeMinnion();
   displayBattleMap();
+  // moveMinnionBoo();
   displayMinnionBoo();
   ifMinnionHit();
   // Minnion.move();
   // Minnion.display();
-  moveMinnionBoo.set("minnionBoo", 2);
+  // moveMinnionBoo.set("minnionBoo", 2);
+}
+
+function generateEmptyGrid(gridSize) {
+  let grid = [];
+  for (let i=0; i<gridSize; i++) {
+    grid.push([]);
+    for (let j=0; j<gridSize; j++) {
+      grid[i].push(0);
+    }
+    
+  }
+  return grid;
 }
 
 function displayBattleMap() {
@@ -68,18 +81,6 @@ function displayBattleMap() {
   
 }
 
-function generateEmptyGrid(gridSize) {
-  let grid = [];
-  for (let i=0; i<gridSize; i++) {
-    grid.push([]);
-    for (let j=0; j<gridSize; j++) {
-      grid[i].push(0);
-    }
-    
-  }
-  return grid;
-}
-
 function displayMinnionBoo() {
   image(minnionBoo, 0, height / 2.2, minnionBooScaler * minnionBoo.width, minnionBooScaler * minnionBoo.height);
 
@@ -94,5 +95,25 @@ function ifMinnionHit() {
     for (let hit = 50; hit > 0; hit -= 10) {
       return "hit";
     }
+  }
+}
+
+class Minnion {
+  constructor(speed, x, y) {
+    this.x = 0;
+    this.y = height / 2.2;
+    this.speed = 5;
+  }
+
+  resetAfter50() {
+    for (roundNumber = 0; roundNumber < 50; roundNumber += 2) {
+      if (roundNumber === 50) {
+        console.log(roundNumber);
+      }
+    }
+  }
+
+  movingMinnion() {
+    let 
   }
 }
